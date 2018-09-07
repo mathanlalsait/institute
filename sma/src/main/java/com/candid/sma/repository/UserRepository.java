@@ -5,11 +5,12 @@ import org.springframework.stereotype.Repository;
 
 import com.candid.sma.model.User;
 @Repository
-public interface UserRepository extends MongoRepository<User, String> {
+public interface UserRepository extends MongoRepository<User, String>,UserRepositoryCustom {
 	
 
 	User findByEmail(String email);
 
-	User findByFullName(String string);
+	User findByFullName(String fullName);
+	User findByPrimaryMobile(String primaryMobile);
 
 }

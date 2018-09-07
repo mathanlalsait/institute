@@ -1,6 +1,7 @@
 package com.candid.sma.model;
 
 import java.util.Date;
+import java.util.Set;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -28,6 +29,8 @@ public class User extends BaseEntity {
 	private boolean delete;
 	private boolean status;
 	private String comments;
+	
+	private Set<Course> courses;
 
 	public User() {
 	}
@@ -37,9 +40,10 @@ public class User extends BaseEntity {
 		this.email = email;
 	}
 
-	public User(String fullName, String email, String primaryMobile, String dob, Integer age, String gender,
-			String refferalType, String address, String city, String state) {
-		super();
+	
+
+	public User(String fullName, String email,String primaryMobile, String dob, Integer age,
+			String gender, String refferalType, String address, String city, String state, Set<Course> courses) {
 		this.fullName = fullName;
 		this.email = email;
 		this.primaryMobile = primaryMobile;
@@ -50,15 +54,16 @@ public class User extends BaseEntity {
 		this.address = address;
 		this.city = city;
 		this.state = state;
+		this.courses = courses;
 	}
-
-	public User(String fullName, String email, String password, String primaryMobile, String secondaryMobile,
-			String dob, Integer age, String gender, String refferalType, String refferalInfo, String address,
-			String city, String state) {
+	
+		
+	public User(String fullName, String email, String primaryMobile, String secondaryMobile, String dob, Integer age,
+			String gender, String refferalType, String refferalInfo, String address, String city, String state,
+			String comments, Set<Course> courses) {
 		super();
 		this.fullName = fullName;
 		this.email = email;
-		this.password = password;
 		this.primaryMobile = primaryMobile;
 		this.secondaryMobile = secondaryMobile;
 		this.dob = dob;
@@ -69,6 +74,8 @@ public class User extends BaseEntity {
 		this.address = address;
 		this.city = city;
 		this.state = state;
+		this.comments = comments;
+		this.courses = courses;
 	}
 
 	public String getFullName() {
@@ -220,8 +227,10 @@ public class User extends BaseEntity {
 		return "User [fullName=" + fullName + ", email=" + email + ", password=" + password + ", primaryMobile="
 				+ primaryMobile + ", secondaryMobile=" + secondaryMobile + ", dob=" + dob + ", age=" + age + ", gender="
 				+ gender + ", refferalType=" + refferalType + ", refferalInfo=" + refferalInfo + ", address=" + address
-				+ ", createdOn=" + createdOn + ", modifiedOn=" + modifiedOn + ", delete=" + delete + ", status="
-				+ status + ", comments=" + comments + "]";
+				+ ", city=" + city + ", state=" + state + ", createdOn=" + createdOn + ", modifiedOn=" + modifiedOn
+				+ ", delete=" + delete + ", status=" + status + ", comments=" + comments + ", courses=" + courses + "]";
 	}
+
+	
 
 }
