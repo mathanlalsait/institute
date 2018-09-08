@@ -27,6 +27,13 @@ public class UserRepositoryCustomImpl implements UserRepositoryCustom {
 		
 	}
 
+	@Override
+	public void deleteById(String id) {
+		System.out.println("Inside");
+		
+		
+	}
+
 	
 
 	

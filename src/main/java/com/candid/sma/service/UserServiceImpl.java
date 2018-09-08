@@ -33,33 +33,37 @@ public class UserServiceImpl implements UserService {
 
 	}
 
-/*	@Override
+	@Override
 	public List<User> findAllUsers() {
 		// TODO Auto-generated method stub
 		return userRepository.findAll();
-	}*/
+	}
+	
+	@Override
+	public User findUserByFullName(String fullName) throws Exception {
+		// TODO Auto-generated method stub
+		return userRepository.findByFullName(fullName);
+	}
 
-	/*@Override
+	@Override
+	public User findUserByPrimaryMobile(String primaryMobile) throws Exception {
+		// TODO Auto-generated method stub
+		return userRepository.findByPrimaryMobile(primaryMobile);
+	}
+
+	@Override
 	public User findUserByEmail(String email) throws Exception {
 		// TODO Auto-generated method stub
 		return userRepository.findByEmail(email);
-	}*/
+	}
 
 	@Override
 	public void updateUser(User newUser) throws Exception {
+		userRepository.save(newUser);
 	}
 
-	@Override
-	public User findUserByEmail(String email) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<User> findAllUsers() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+		
+	
 
 	
 }

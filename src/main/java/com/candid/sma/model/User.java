@@ -77,6 +77,26 @@ public class User extends BaseEntity {
 		this.comments = comments;
 		this.courses = courses;
 	}
+	
+	
+
+	public User(String fullName, String email,String primaryMobile, String dob, Integer age,
+			String gender, String refferalType, String address, String city, String state, boolean status,
+			Set<Course> courses) {
+		super();
+		this.fullName = fullName;
+		this.email = email;
+		this.primaryMobile = primaryMobile;
+		this.dob = dob;
+		this.age = age;
+		this.gender = gender;
+		this.refferalType = refferalType;
+		this.address = address;
+		this.city = city;
+		this.state = state;
+		this.status = status;
+		this.courses = courses;
+	}
 
 	public String getFullName() {
 		return fullName;

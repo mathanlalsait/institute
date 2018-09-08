@@ -9,5 +9,7 @@ public interface UserRepositoryCustom {
 	
 
 	public UpdateResult updateUserPhone(String firstName,String phone);
+	
+	public void deleteById(String id);
 
 }

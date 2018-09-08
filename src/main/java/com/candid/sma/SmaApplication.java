@@ -36,7 +36,12 @@ public class SmaApplication implements CommandLineRunner {
 		course.add(new Course("JAVA"));
 		course.add(new Course("SPRING"));
 		//userService.saveUser(new User("RoshMohan","rosh@gm.com"));
-		userService.saveUser(new User("RoshMohan", "rosh@gm.com", "777777", "25/10/1980", 18, "m", "online", "chrompet","chrompet","TN",course));
+		userService.saveUser(new User("RosMohan", "rosh@gm.com", "77777777", "25/10/1980", 32, "m", "online", "chrompet","chrompet","TN",true,course));
+		userService.saveUser(new User("RajaGuru", "raj@gm.com", "88888888", "25/10/1980", 38, "m", "online", "chrompet","chrompet","TN",false,course));
+		userService.saveUser(new User("Candid", "candid@gm.com", "9999999", "25/10/1980", 18, "m", "online", "chrompet","chrompet","TN",true,course));
+		userService.saveUser(new User("Sajid", "sajid@gm.com", "666666666", "25/10/1980", 22, "m", "online", "chrompet","chrompet","TN",true,course));
+		
+
 		// save a couple of users
 		//repository.save(new User("Job", "job@gm.com"));
 		//repository.save(new User("Bob", "bob@gm.com"));
@@ -50,24 +55,36 @@ public class SmaApplication implements CommandLineRunner {
 		System.out.println();
 
 		// fetch an individual customer
-		System.out.println("User found with findByFullName('RoshMohan'):");
+		System.out.println("User found with findByFullName('RajaGuru'):");
 		System.out.println("--------------------------------");
-		System.out.println(repository.findByFullName("RoshMohan"));
+		System.out.println(repository.findByFullName("RajaGuru"));
 
-		System.out.println("User found with findByEmail('rosh@gm.com')");
+		System.out.println("User found with findByEmail('raj@gm.com')");
 		System.out.println("--------------------------------");
 
-		System.out.println(repository.findByEmail("rosh@gm.com"));
+		System.out.println(repository.findByEmail("raj@gm.com"));
 
 		System.out.println("------------Updating UserPhone--------------------");
 
-		System.out.print(repository.updateUserPhone("RoshMohan", "66666666"));
+		System.out.print(repository.updateUserPhone("RoshMohan", "77"));
 
 		// fetch an individual customer
 		System.out.println("new Phone Number Updated found by phone:");
 		System.out.println("--------------------------------");
-		System.out.println(repository.findByPrimaryMobile("66666666"));
+		System.out.println(repository.findByPrimaryMobile("77"));
 		
+		
+		
+		
+		// fetch all Active Users
+				System.out.println("-------------------------------");
+				for (User user : repository.findAllActiveUsers()) {
+					System.out.println(user);
+				}
+				System.out.println();
+				
+				
+				repository.deleteById("11");
 		
 
 	}
