@@ -3,10 +3,11 @@ package com.candid.sma.model;
 import java.util.Date;
 import java.util.Set;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "user")
-public class User extends BaseEntity {
+public class User2 extends BaseEntity {
 
 	private String fullName;
 	private String email;
@@ -29,20 +30,20 @@ public class User extends BaseEntity {
 	private boolean status;
 	private String comments;
 	
-	/*private Set<Course> courses;*/
+	private Set<Course> courses;
 
-	public User() {
+	public User2() {
 	}
 
-	public User(String fullName, String email) {
+	public User2(String fullName, String email) {
 		this.fullName = fullName;
 		this.email = email;
 	}
 
 	
 
-	public User(String fullName, String email,String primaryMobile, String dob, Integer age,
-			String gender, String refferalType, String address, String city, String state) {
+	public User2(String fullName, String email,String primaryMobile, String dob, Integer age,
+			String gender, String refferalType, String address, String city, String state, Set<Course> courses) {
 		this.fullName = fullName;
 		this.email = email;
 		this.primaryMobile = primaryMobile;
@@ -53,12 +54,14 @@ public class User extends BaseEntity {
 		this.address = address;
 		this.city = city;
 		this.state = state;
+		this.courses = courses;
 	}
 	
 		
-	public User(String fullName, String email, String primaryMobile, String secondaryMobile, String dob, Integer age,
+	public User2(String fullName, String email, String primaryMobile, String secondaryMobile, String dob, Integer age,
 			String gender, String refferalType, String refferalInfo, String address, String city, String state,
-			String comments) {
+			String comments, Set<Course> courses) {
+		super();
 		this.fullName = fullName;
 		this.email = email;
 		this.primaryMobile = primaryMobile;
@@ -72,12 +75,15 @@ public class User extends BaseEntity {
 		this.city = city;
 		this.state = state;
 		this.comments = comments;
+		this.courses = courses;
 	}
 	
 	
 
-	public User(String fullName, String email,String primaryMobile, String dob, Integer age,
-			String gender, String refferalType, String address, String city, String state, boolean status) {
+	public User2(String fullName, String email,String primaryMobile, String dob, Integer age,
+			String gender, String refferalType, String address, String city, String state, boolean status,
+			Set<Course> courses) {
+		super();
 		this.fullName = fullName;
 		this.email = email;
 		this.primaryMobile = primaryMobile;
@@ -88,7 +94,8 @@ public class User extends BaseEntity {
 		this.address = address;
 		this.city = city;
 		this.state = state;
-		
+		this.status = status;
+		this.courses = courses;
 	}
 
 	public String getFullName() {
@@ -241,7 +248,7 @@ public class User extends BaseEntity {
 				+ primaryMobile + ", secondaryMobile=" + secondaryMobile + ", dob=" + dob + ", age=" + age + ", gender="
 				+ gender + ", refferalType=" + refferalType + ", refferalInfo=" + refferalInfo + ", address=" + address
 				+ ", city=" + city + ", state=" + state + ", createdOn=" + createdOn + ", modifiedOn=" + modifiedOn
-				+ ", delete=" + delete + ", status=" + status + ", comments=" + comments + "]";
+				+ ", delete=" + delete + ", status=" + status + ", comments=" + comments + ", courses=" + courses + "]";
 	}
 
 	

@@ -40,7 +40,7 @@ public class UserServiceImpl implements UserService {
 	}
 	
 	@Override
-	public User findUserByFullName(String fullName) throws Exception {
+	public User findUserByFullName(String fullName) {
 		// TODO Auto-generated method stub
 		return userRepository.findByFullName(fullName);
 	}
@@ -58,8 +58,8 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public void updateUser(User newUser) throws Exception {
-		userRepository.save(newUser);
+	public User updateUser(User newUser) {
+		return userRepository.save(newUser);
 	}
 
 		

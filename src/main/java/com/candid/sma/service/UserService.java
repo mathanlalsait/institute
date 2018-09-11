@@ -13,8 +13,8 @@ public interface UserService {
     List<User> findAllUsers();
  
     User findUserByEmail(String email) throws Exception;
-	User findUserByFullName(String fullName)throws Exception;
+	User findUserByFullName(String fullName);
 	User findUserByPrimaryMobile(String primaryMobile)throws Exception;
-    void updateUser(User newUser) throws Exception;
+    User updateUser(User newUser);
 
 }

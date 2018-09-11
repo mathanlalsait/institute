@@ -1,17 +1,18 @@
 package com.candid.sma;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.candid.sma.model.Course;
+import com.candid.sma.model.Batch;
 import com.candid.sma.model.User;
-import com.candid.sma.repository.UserRepositoryCustom;
+import com.candid.sma.repository.BatchRepository;
 import com.candid.sma.repository.UserRepository;
+import com.candid.sma.service.BatchService;
 import com.candid.sma.service.UserService;
 
 @SpringBootApplication
@@ -20,6 +21,12 @@ public class SmaApplication implements CommandLineRunner {
 	private UserRepository repository;
 	@Autowired
 	private UserService userService;
+	@Autowired
+	private BatchRepository batchRepository;
+	@Autowired
+	private BatchService batchService;	
+	
+	
 	
 	
 
@@ -32,14 +39,14 @@ public class SmaApplication implements CommandLineRunner {
 
 		repository.deleteAll();
 		
-		Set<Course> course=new HashSet<Course>();
+		/*Set<Course> course=new HashSet<Course>();
 		course.add(new Course("JAVA"));
-		course.add(new Course("SPRING"));
+		course.add(new Course("SPRING"));*/
 		//userService.saveUser(new User("RoshMohan","rosh@gm.com"));
-		userService.saveUser(new User("RosMohan", "rosh@gm.com", "77777777", "25/10/1980", 32, "m", "online", "chrompet","chrompet","TN",true,course));
-		userService.saveUser(new User("RajaGuru", "raj@gm.com", "88888888", "25/10/1980", 38, "m", "online", "chrompet","chrompet","TN",false,course));
-		userService.saveUser(new User("Candid", "candid@gm.com", "9999999", "25/10/1980", 18, "m", "online", "chrompet","chrompet","TN",true,course));
-		userService.saveUser(new User("Sajid", "sajid@gm.com", "666666666", "25/10/1980", 22, "m", "online", "chrompet","chrompet","TN",true,course));
+		userService.saveUser(new User("RosMohan", "rosh@gm.com", "77777777", "25/10/1980", 32, "m", "online", "chrompet","chrompet","TN",true));
+		userService.saveUser(new User("RajaGuru", "raj@gm.com", "88888888", "25/10/1980", 38, "m", "online", "chrompet","chrompet","TN",false));
+		userService.saveUser(new User("Candid", "candid@gm.com", "9999999", "25/10/1980", 18, "m", "online", "chrompet","chrompet","TN",true));
+		userService.saveUser(new User("Sajid", "sajid@gm.com", "666666666", "25/10/1980", 22, "m", "online", "chrompet","chrompet","TN",true));
 		
 
 		// save a couple of users
@@ -85,7 +92,29 @@ public class SmaApplication implements CommandLineRunner {
 				
 				
 				repository.deleteById("11");
+				
+				
+				System.out.println("-------------------------------");
+				
+				System.out.println("Batch CRUD Operations");
+				
+				List<String> studentsList=new ArrayList();
+				studentsList.add("5b93cb811938c229782b6334");
+				studentsList.add("5b93cb811938c229782b6335");
+				batchService.saveBatch(new Batch("March-July-2018", "active",studentsList));
+				
+				
+				
+				
 		
 
 	}
+	
+	
+	
+	
+	
+	
+	
+	
 }
