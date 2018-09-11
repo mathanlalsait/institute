@@ -1,9 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.candid.sma.SmaApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 14.643 s <<< FAILURE! - in com.candid.sma.SmaApplicationTests
-contextLoads(com.candid.sma.SmaApplicationTests)  Time elapsed: 0.062 s  <<< ERROR!
-java.lang.IllegalStateException: Failed to load ApplicationContext
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'smaApplication': Unsatisfied dependency expressed through field 'batchService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.candid.sma.service.BatchService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.candid.sma.service.BatchService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 19.693 s - in com.candid.sma.SmaApplicationTests

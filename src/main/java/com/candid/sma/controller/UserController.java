@@ -18,17 +18,17 @@ public class UserController {
 	@Autowired
 	UserService userService;
 
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(value = "/getAllUsers", method = RequestMethod.GET)
 	public List<User> getAllUser() {
 		return userService.findAllUsers();
 	}
 
-	@RequestMapping(value = "/{name}", method = RequestMethod.GET)
+	@RequestMapping(value = "/getuserbyname/{name}", method = RequestMethod.GET)
 	public User getUserByName(@PathVariable("name") String fullName) {
 		return userService.findUserByFullName(fullName);
 	}
 
-	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/deleteuser/{id}", method = RequestMethod.DELETE)
 	public void deleteUser(@PathVariable("id") String id) {
 		try {
 			userService.deleteUser(id);
@@ -38,7 +38,7 @@ public class UserController {
 		}
 	}
 
-	@RequestMapping(value = "/{email}", method = RequestMethod.GET)
+	@RequestMapping(value = "/getuserbyemail/{email}", method = RequestMethod.GET)
 	public User getUserByEmail(@PathVariable("email") String email) {
 		User user = null;
 		try {
@@ -63,7 +63,7 @@ public class UserController {
 
 	}
 
-	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
+	@RequestMapping(value = "/updateuser/{id}", method = RequestMethod.PUT)
 	public void modifyUserById(@PathVariable("id") String id, @RequestBody User user) {
 		user.setId(id);
 		userService.updateUser(user);

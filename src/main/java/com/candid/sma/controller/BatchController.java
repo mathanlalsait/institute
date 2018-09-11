@@ -7,20 +7,23 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
 import com.candid.sma.model.Batch;
 import com.candid.sma.service.BatchService;
 
+@RestController
 public class BatchController {
 
 	@Autowired
 	BatchService batchService;
 
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(value = "/getAllBatches", method = RequestMethod.GET)
 	public List<Batch> getAllBatches() {
 		return batchService.findAllBatches();
 	}
 
-	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/deletebatch/{id}", method = RequestMethod.DELETE)
 	public void deleteBatch(@PathVariable("id") String id) {
 		try {
 			batchService.deleteBatch(id);
@@ -42,7 +45,7 @@ public class BatchController {
 
 	}
 
-	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
+	@RequestMapping(value = "/updatebatch/{id}", method = RequestMethod.PUT)
 	public void modifyBatchById(@PathVariable("id") String id, @RequestBody Batch batch) {
 		batch.setId(id);
 		batchService.updateBatch(batch);

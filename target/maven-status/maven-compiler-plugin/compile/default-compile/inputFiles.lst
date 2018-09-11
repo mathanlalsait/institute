@@ -1,6 +1,7 @@
 D:\CandidSpringBootProject\gitSMA\src\main\java\com\candid\sma\model\User2.java
 D:\CandidSpringBootProject\gitSMA\src\main\java\com\candid\sma\utils\RandomPasswordGenerator.java
 D:\CandidSpringBootProject\gitSMA\src\main\java\com\candid\sma\model\BaseEntity.java
+D:\CandidSpringBootProject\gitSMA\src\main\java\com\candid\sma\controller\BatchController.java
 D:\CandidSpringBootProject\gitSMA\src\main\java\com\candid\sma\model\User.java
 D:\CandidSpringBootProject\gitSMA\src\main\java\com\candid\sma\SmaApplication.java
 D:\CandidSpringBootProject\gitSMA\src\main\java\com\candid\sma\service\UserServiceImpl.java
@@ -11,6 +12,7 @@ D:\CandidSpringBootProject\gitSMA\src\main\java\com\candid\sma\service\BatchServ
 D:\CandidSpringBootProject\gitSMA\src\main\java\com\candid\sma\repository\UserRepository.java
 D:\CandidSpringBootProject\gitSMA\src\main\java\com\candid\sma\repository\UserRepositoryCustom.java
 D:\CandidSpringBootProject\gitSMA\src\main\java\com\candid\sma\repository\UserRepositoryCustomImpl.java
+D:\CandidSpringBootProject\gitSMA\src\main\java\com\candid\sma\controller\UserController.java
 D:\CandidSpringBootProject\gitSMA\src\main\java\com\candid\sma\model\Address.java
 D:\CandidSpringBootProject\gitSMA\src\main\java\com\candid\sma\repository\BatchRepository.java
 D:\CandidSpringBootProject\gitSMA\src\main\java\com\candid\sma\service\BatchService.java
