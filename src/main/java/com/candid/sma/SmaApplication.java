@@ -16,8 +16,8 @@ import com.candid.sma.service.BatchService;
 import com.candid.sma.service.UserService;
 
 @SpringBootApplication
-public class SmaApplication implements CommandLineRunner {
-	@Autowired
+public class SmaApplication /*implements CommandLineRunner*/ {
+	/*@Autowired
 	private UserRepository repository;
 	@Autowired
 	private UserService userService;
@@ -25,7 +25,7 @@ public class SmaApplication implements CommandLineRunner {
 	private BatchRepository batchRepository;
 	@Autowired
 	private BatchService batchService;	
-	
+	*/
 	
 	
 	
@@ -34,20 +34,20 @@ public class SmaApplication implements CommandLineRunner {
 		SpringApplication.run(SmaApplication.class, args);
 	}
 
-	@Override
+	/*@Override
 	public void run(String... args) throws Exception {
 
-		//repository.deleteAll();
+		repository.deleteAll();
 		batchRepository.deleteAll();
 		
-		/*Set<Course> course=new HashSet<Course>();
+		Set<Course> course=new HashSet<Course>();
 		course.add(new Course("JAVA"));
-		course.add(new Course("SPRING"));*/
+		course.add(new Course("SPRING"));
 		//userService.saveUser(new User("RoshMohan","rosh@gm.com"));
-		//userService.saveUser(new User("RosMohan", "rosh@gm.com", "77777777", "25/10/1980", 32, "m", "online", "chrompet","chrompet","TN",true));
-		//userService.saveUser(new User("RajaGuru", "raj@gm.com", "88888888", "25/10/1980", 38, "m", "online", "chrompet","chrompet","TN",false));
-		//userService.saveUser(new User("Candid", "candid@gm.com", "9999999", "25/10/1980", 18, "m", "online", "chrompet","chrompet","TN",true));
-		//userService.saveUser(new User("Sajid", "sajid@gm.com", "666666666", "25/10/1980", 22, "m", "online", "chrompet","chrompet","TN",true));
+		userService.saveUser(new User("RosMohan", "rosh@gm.com", "77777777", "25/10/1980", 32, "m", "online", "chrompet","chrompet","TN",true));
+		userService.saveUser(new User("RajaGuru", "raj@gm.com", "88888888", "25/10/1980", 38, "m", "online", "chrompet","chrompet","TN",false));
+		userService.saveUser(new User("Candid", "candid@gm.com", "9999999", "25/10/1980", 18, "m", "online", "chrompet","chrompet","TN",true));
+		userService.saveUser(new User("Sajid", "sajid@gm.com", "666666666", "25/10/1980", 22, "m", "online", "chrompet","chrompet","TN",true));
 		
 
 		// save a couple of users
@@ -110,7 +110,7 @@ public class SmaApplication implements CommandLineRunner {
 		
 
 	}
-	
+	*/
 	
 	
 	

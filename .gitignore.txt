@@ -1,8 +1,0 @@
-*/.metadata/*
-*/.settings/*
-*.project
-*.classpath
-*/target/*
-.metadata/*
-Servers/*
-/.metadata/

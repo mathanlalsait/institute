@@ -1,8 +1,11 @@
 D:\CandidSpringBootProject\gitSMA\src\main\java\com\candid\sma\model\User2.java
+D:\CandidSpringBootProject\gitSMA\src\main\java\com\candid\sma\Exception\ErrorDetails.java
 D:\CandidSpringBootProject\gitSMA\src\main\java\com\candid\sma\utils\RandomPasswordGenerator.java
 D:\CandidSpringBootProject\gitSMA\src\main\java\com\candid\sma\model\BaseEntity.java
+D:\CandidSpringBootProject\gitSMA\src\main\java\com\candid\sma\Exception\MyCustomizedResponseEntityExceptionHandler.java
 D:\CandidSpringBootProject\gitSMA\src\main\java\com\candid\sma\controller\BatchController.java
 D:\CandidSpringBootProject\gitSMA\src\main\java\com\candid\sma\model\User.java
+D:\CandidSpringBootProject\gitSMA\src\main\java\com\candid\sma\Exception\RecordNotFoundException.java
 D:\CandidSpringBootProject\gitSMA\src\main\java\com\candid\sma\SmaApplication.java
 D:\CandidSpringBootProject\gitSMA\src\main\java\com\candid\sma\service\UserServiceImpl.java
 D:\CandidSpringBootProject\gitSMA\src\main\java\com\candid\sma\model\Course.java
@@ -11,7 +14,9 @@ D:\CandidSpringBootProject\gitSMA\src\main\java\com\candid\sma\model\Batch.java
 D:\CandidSpringBootProject\gitSMA\src\main\java\com\candid\sma\service\BatchServiceImpl.java
 D:\CandidSpringBootProject\gitSMA\src\main\java\com\candid\sma\repository\UserRepository.java
 D:\CandidSpringBootProject\gitSMA\src\main\java\com\candid\sma\repository\UserRepositoryCustom.java
+D:\CandidSpringBootProject\gitSMA\src\main\java\com\candid\sma\Exception\RestExceptionHandler.java
 D:\CandidSpringBootProject\gitSMA\src\main\java\com\candid\sma\repository\UserRepositoryCustomImpl.java
+D:\CandidSpringBootProject\gitSMA\src\main\java\com\candid\sma\Exception\UserException.java
 D:\CandidSpringBootProject\gitSMA\src\main\java\com\candid\sma\controller\UserController.java
 D:\CandidSpringBootProject\gitSMA\src\main\java\com\candid\sma\model\Address.java
 D:\CandidSpringBootProject\gitSMA\src\main\java\com\candid\sma\repository\BatchRepository.java

@@ -3,15 +3,22 @@ package com.candid.sma.model;
 import java.util.Date;
 import java.util.Set;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "user")
 public class User extends BaseEntity {
 
+	@NotNull
+	@Size(min = 2, message = "Name should have atleast 2 characters")
 	private String fullName;
 	private String email;
 	/** Password Should be auto-generated,5 digit random number **/
 	private String password;
+
+	@Size(min = 10, message = "Please enter valid mobile number")
 	private String primaryMobile;
 	private String secondaryMobile;
 	private String dob;
@@ -28,8 +35,8 @@ public class User extends BaseEntity {
 	private boolean delete;
 	private boolean status;
 	private String comments;
-	
-	/*private Set<Course> courses;*/
+
+	/* private Set<Course> courses; */
 
 	public User() {
 	}
@@ -41,54 +48,14 @@ public class User extends BaseEntity {
 
 	
 
-	public User(String fullName, String email,String primaryMobile, String dob, Integer age,
-			String gender, String refferalType, String address, String city, String state) {
-		this.fullName = fullName;
-		this.email = email;
-		this.primaryMobile = primaryMobile;
-		this.dob = dob;
-		this.age = age;
-		this.gender = gender;
-		this.refferalType = refferalType;
-		this.address = address;
-		this.city = city;
-		this.state = state;
-	}
-	
-		
-	public User(String fullName, String email, String primaryMobile, String secondaryMobile, String dob, Integer age,
-			String gender, String refferalType, String refferalInfo, String address, String city, String state,
-			String comments) {
-		this.fullName = fullName;
-		this.email = email;
-		this.primaryMobile = primaryMobile;
-		this.secondaryMobile = secondaryMobile;
-		this.dob = dob;
-		this.age = age;
-		this.gender = gender;
-		this.refferalType = refferalType;
-		this.refferalInfo = refferalInfo;
-		this.address = address;
-		this.city = city;
-		this.state = state;
-		this.comments = comments;
-	}
-	
-	
 
-	public User(String fullName, String email,String primaryMobile, String dob, Integer age,
-			String gender, String refferalType, String address, String city, String state, boolean status) {
+	public User(String fullName,
+			String email, String primaryMobile,
+			String gender) {
 		this.fullName = fullName;
 		this.email = email;
 		this.primaryMobile = primaryMobile;
-		this.dob = dob;
-		this.age = age;
 		this.gender = gender;
-		this.refferalType = refferalType;
-		this.address = address;
-		this.city = city;
-		this.state = state;
-		
 	}
 
 	public String getFullName() {
@@ -235,15 +202,17 @@ public class User extends BaseEntity {
 		this.comments = comments;
 	}
 
-	@Override
+	/*@Override
 	public String toString() {
 		return "User [fullName=" + fullName + ", email=" + email + ", password=" + password + ", primaryMobile="
 				+ primaryMobile + ", secondaryMobile=" + secondaryMobile + ", dob=" + dob + ", age=" + age + ", gender="
 				+ gender + ", refferalType=" + refferalType + ", refferalInfo=" + refferalInfo + ", address=" + address
 				+ ", city=" + city + ", state=" + state + ", createdOn=" + createdOn + ", modifiedOn=" + modifiedOn
 				+ ", delete=" + delete + ", status=" + status + ", comments=" + comments + "]";
+	}*/
+	public String toString() {
+		return String.format("User[%s, %s, %s, %s]", fullName, email, primaryMobile, gender);
 	}
-
+}
 	
 
-}

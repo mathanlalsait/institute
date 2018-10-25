@@ -2,6 +2,7 @@ package com.candid.sma.service;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,7 +17,7 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private UserRepository userRepository;
 
-	public void saveUser(User user) {
+	public User saveUser(User user) {
 		// user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
 		user.setCreatedOn(new Date());
 		user.setDelete(false);
@@ -24,7 +25,7 @@ public class UserServiceImpl implements UserService {
 		user.setPassword(randomPass);
 		user.setModifiedOn(new Date());
 		user.setStatus(true);
-		userRepository.save(user);
+		return userRepository.save(user);
 	}
 
 	@Override
@@ -59,7 +60,23 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public User updateUser(User newUser) {
+		if(newUser!=null) {
+	    User user=findUserById(newUser.getId());
+	    Date createdon=user.getCreatedOn();
+	    boolean delete=user.isDelete();
+	    boolean status=user.isStatus();
+	    newUser.setCreatedOn(createdon);
+	    newUser.setDelete(delete);
+	    newUser.setStatus(status);
+	    newUser.setModifiedOn(new Date());
+		}
 		return userRepository.save(newUser);
+	}
+
+	@Override
+	public User findUserById(String id) {
+		// TODO Auto-generated method stub
+		return userRepository.findById(id).orElse(null);
 	}
 
 		

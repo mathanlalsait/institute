@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.candid.sma.SmaApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 19.693 s - in com.candid.sma.SmaApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 27.829 s - in com.candid.sma.SmaApplicationTests
