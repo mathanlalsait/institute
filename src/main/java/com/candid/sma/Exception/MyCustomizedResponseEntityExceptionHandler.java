@@ -19,7 +19,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 @ControllerAdvice
 public class MyCustomizedResponseEntityExceptionHandler extends ResponseEntityExceptionHandler {
 
-	   /* @ExceptionHandler(Exception.class)
+	    @ExceptionHandler(Exception.class)
 	    public final ResponseEntity<Object> handleAllExceptions(Exception ex, WebRequest request) {
 	        List<String> details = new ArrayList<>();
 	        details.add(ex.getLocalizedMessage());
@@ -43,6 +43,17 @@ public class MyCustomizedResponseEntityExceptionHandler extends ResponseEntityEx
 	        }
 	        ErrorDetails error = new ErrorDetails("Validation Failed", details);
 	        return new ResponseEntity(error, HttpStatus.BAD_REQUEST);
-	    }*/
+	    }
+	    
+	  
+//	    @ExceptionHandler(SmaInputException.class)
+//	    protected ResponseEntity<Object> handleMethodArgumentNotValidException(MethodArgumentNotValidException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
+//	        List<String> details = new ArrayList<>();
+//	        for(ObjectError error : ex.getBindingResult().getAllErrors()) {
+//	            details.add(error.getDefaultMessage());
+//	        }
+//	        ErrorDetails error = new ErrorDetails("Validation Failed", details);
+//	        return new ResponseEntity(error, HttpStatus.BAD_REQUEST);
+//	    }
 	
 }

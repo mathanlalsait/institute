@@ -6,22 +6,23 @@ import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
 
-import com.candid.sma.model.User;
+import com.candid.sma.model.Employee;
 import com.mongodb.WriteResult;
 import com.mongodb.client.result.UpdateResult;
 
-public class UserRepositoryCustomImpl implements UserRepositoryCustom {
+public class EmployeeRepositoryCustomImpl implements EmployeeRepositoryCustom {
 	
 	@Autowired
 	MongoTemplate mongoTemplate;
 
 	@Override
 	public UpdateResult updateUserPhone(String fullName, String phone) {
+		System.out.println(fullName+"********"+phone);
 		Query query = new Query(Criteria.where("fullName").is(fullName));
         Update update = new Update();
         update.set("primaryMobile", phone);
 
-        UpdateResult result = mongoTemplate.updateFirst(query, update, User.class);
+        UpdateResult result = mongoTemplate.updateFirst(query, update, Employee.class);
 		return result;
 
 		

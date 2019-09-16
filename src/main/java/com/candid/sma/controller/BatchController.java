@@ -35,6 +35,7 @@ public class BatchController {
 
 	@RequestMapping(value = "/createbatch", method = RequestMethod.POST)
 	public Batch createBatch(@RequestBody Batch batch) {
+		System.out.println("Heyyyy");
 		try {
 			batchService.saveBatch(batch);
 		} catch (Exception e) {

@@ -7,14 +7,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 import com.candid.sma.model.Batch;
-import com.candid.sma.model.User;
+import com.candid.sma.model.Employee;
 import com.candid.sma.repository.BatchRepository;
-import com.candid.sma.repository.UserRepository;
+import com.candid.sma.repository.EmployeeRepository;
 import com.candid.sma.service.BatchService;
-import com.candid.sma.service.UserService;
+import com.candid.sma.service.EmployeeService;
 
+@EnableAspectJAutoProxy
 @SpringBootApplication
 public class SmaApplication /*implements CommandLineRunner*/ {
 	/*@Autowired

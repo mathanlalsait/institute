@@ -7,7 +7,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "user")
-public class User2 extends BaseEntity {
+public class Employee2 extends BaseEntity {
 
 	private String fullName;
 	private String email;
@@ -32,17 +32,17 @@ public class User2 extends BaseEntity {
 	
 	private Set<Course> courses;
 
-	public User2() {
+	public Employee2() {
 	}
 
-	public User2(String fullName, String email) {
+	public Employee2(String fullName, String email) {
 		this.fullName = fullName;
 		this.email = email;
 	}
 
 	
 
-	public User2(String fullName, String email,String primaryMobile, String dob, Integer age,
+	public Employee2(String fullName, String email,String primaryMobile, String dob, Integer age,
 			String gender, String refferalType, String address, String city, String state, Set<Course> courses) {
 		this.fullName = fullName;
 		this.email = email;
@@ -58,7 +58,7 @@ public class User2 extends BaseEntity {
 	}
 	
 		
-	public User2(String fullName, String email, String primaryMobile, String secondaryMobile, String dob, Integer age,
+	public Employee2(String fullName, String email, String primaryMobile, String secondaryMobile, String dob, Integer age,
 			String gender, String refferalType, String refferalInfo, String address, String city, String state,
 			String comments, Set<Course> courses) {
 		super();
@@ -80,7 +80,7 @@ public class User2 extends BaseEntity {
 	
 	
 
-	public User2(String fullName, String email,String primaryMobile, String dob, Integer age,
+	public Employee2(String fullName, String email,String primaryMobile, String dob, Integer age,
 			String gender, String refferalType, String address, String city, String state, boolean status,
 			Set<Course> courses) {
 		super();
